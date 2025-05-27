@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Sensor Kit Documentation</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/docs/introduction.html' | relative_url }}">Introduction</a>
+            <a href="{{ '/docs/installation.html' | relative_url }}">Installation</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="project-header">
+            <span class="project-number">Project {{ page.project_number }}</span>
+            <span class="difficulty">{{ page.difficulty | capitalize }}</span>
+        </div>
+        
+        {{ content }}
+        
+        <div class="project-navigation">
+            {% if page.project_number > 1 %}
+                <a href="project-{{ page.project_number | minus: 1 | prepend: '00' | slice: -2, 2 }}-*.html">← Previous Project</a>
+            {% endif %}
+            {% if page.project_number < 37 %}
+                <a href="project-{{ page.project_number | plus: 1 | prepend: '00' | slice: -2, 2 }}-*.html">Next Project →</a>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

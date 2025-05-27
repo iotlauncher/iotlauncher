@@ -1,0 +1,27 @@
+title: "37-in-1 Sensor Kit Documentation"
+description: "Complete guide for Arduino sensor projects"
+baseurl: ""
+url: "https://carlerickrowan.github.io/carlerickrowan"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Navigation
+header_pages:
+  - docs/introduction.md
+  - docs/installation.md
+
+# Collections for better organization
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
